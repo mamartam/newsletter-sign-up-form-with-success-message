@@ -75,11 +75,18 @@ form input {
   border: 1px solid var(--grey);
   margin-bottom: 1.5em;
 }
+form input:focus {
+  outline: 1px solid var(--dark-blue);
+  outline-offset: 2px;
+}
 form input::placeholder {
   color: var(--grey);
 }
 
-.subscribe-btn {
+.subscribe-btn:hover {
+  background: linear-gradient(to right, var(--red), var(--red), orange);
+  border-color: transparent;
+  cursor: pointer;
 }
 .btn {
   background-color: var(--dark-blue);
