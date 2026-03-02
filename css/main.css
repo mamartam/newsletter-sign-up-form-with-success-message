@@ -27,7 +27,6 @@ body {
   width: 100%;
   min-height: 100vh;
   color: var(--dark-blue);
-  background-color: var(--dark-blue);
 }
 main {
   display: flex;
@@ -36,6 +35,8 @@ main {
   background-color: var(--white);
 }
 .img-section {
+  display: flex;
+  justify-content: center;
 }
 .info-section {
   padding: 1em 1.5em;
@@ -103,6 +104,22 @@ form input::placeholder {
   display: none;
 }
 /* TABLET */
+@media screen and (min-width: 550px) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    background-color: var(--dark-blue);
+  }
+  main {
+    max-width: 600px;
+    padding: 1.5em;
+    margin: 2em;
+    background-color: var(--white);
+    border-radius: 1.5em;
+  }
+}
 /* DESKTOP */
 @media screen and (min-width: 1200px) {
   body {
@@ -116,8 +133,7 @@ form input::placeholder {
     grid-template-rows: 1fr 1fr;
     grid-template-rows: 1fr;
     flex-direction: unset;
-    padding: 1.5em;
-    border-radius: 1.5em;
+
     gap: 2em;
     max-width: 1000px;
   }
