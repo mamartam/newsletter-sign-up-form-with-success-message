@@ -18,6 +18,7 @@
   margin: 0;
   padding: 0;
 }
+
 /* BASIC */
 body {
   font-size: 16px;
@@ -25,6 +26,79 @@ body {
   font-weight: normal;
   width: 100%;
   min-height: 100vh;
+  color: var(--dark-blue);
+}
+main {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+.img-section {
+}
+.info-section {
+  padding: 1em 1.5em;
+}
+.info-header {
+  margin-bottom: 0.5em;
+  color: var(--dark-blue);
+  font-weight: 700;
+  font-size: 2.5em;
+}
+.info-description {
+  margin-bottom: 1.5em;
+}
+.info-advantages-list {
+  margin-bottom: 2em;
+}
+.info-advantages-list li {
+  margin-bottom: 1em;
+  list-style-image: url("../assets/images/icon-list.svg");
+  list-style-position: inside;
+}
+form {
+  display: flex;
+  flex-direction: column;
+}
+form label {
+  color: var(--dark-blue);
+  margin-bottom: 0.5em;
+  font-size: 0.75em;
+  font-weight: 700;
+}
+form input {
+  padding: 1em 1.5em;
+  border-radius: 0.5em;
+  border: none;
+  border: 1px solid var(--grey);
+  margin-bottom: 1.5em;
+}
+form input::placeholder {
+  color: var(--grey);
+}
+
+.subscribe-btn {
+}
+.btn {
+  background-color: var(--dark-blue);
+  padding: 1em;
+  border-radius: 0.5em;
+  color: var(--white);
+  font-family: 700;
+}
+.success-section {
+}
+.hide {
+}
+.success-header {
+}
+.success-description {
+}
+.success-accent {
+}
+.dismiss-message-btn {
+}
+.hide {
+  display: none;
 }
 /* TABLET */
 /* DESKTOP */
