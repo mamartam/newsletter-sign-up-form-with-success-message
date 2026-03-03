@@ -39,10 +39,7 @@ During this challenge, I focused on building a robust, accessible, and responsiv
 
 While the current solution is fully functional, I have identified several areas for future optimization and scaling:
 
-- ⚡ JavaScript Refactoring (DRY Principle):
-  - The logic for form submission and the "Enter" key press could be unified. In HTML forms, a submit event is automatically triggered by the Enter key if a submit button is present. Removing the redundant keydown listener would make the codebase smaller and easier to maintain.
 - 🎨 Enhanced User Experience (UX)
-  - Real-time Validation: Switching from blur to the input event would allow users to see the error disappear the moment they fix their typo, rather than waiting until they click away.
   - Micro-animations: Adding a fade-in effect when switching between the form and the success message using CSS transitions or Animate.css would make the transition feel smoother and more "premium."
   - Custom Focus Styles: Implementing more distinct :focus-visible styles to ensure high visibility for keyboard-only users.
 
