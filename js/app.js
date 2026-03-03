@@ -1,11 +1,12 @@
+// Connectin with DOM
 const userEmail = document.getElementById("user-email");
 const errorMessage = document.querySelector(".error-message");
 const form = document.querySelector(".form");
 const subscribeBtn = document.querySelector(".subscribe-btn");
-
 const imgSection = document.querySelector(".img-section");
 const infoSection = document.querySelector(".info-section");
 const successSection = document.querySelector(".success-section");
+const dismissMessageBtn = document.querySelector(".dismiss-message-btn");
 
 let isCorrectEmail = false;
 
@@ -13,26 +14,38 @@ function emailValidator(str) {
   const regexForEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return regexForEmail.test(str);
 }
+
+function removeClass(element, className) {
+  element.classList.remove(className);
+}
+function addClassName(element, className) {
+  element.classList.add(className);
+}
+userEmail.addEventListener("blur", (event) => {
+  let inputedEmail = String(event.target.value);
+  checkEmailInputField(inputedEmail);
+});
+
 function checkEmailInputField(inputedValue) {
   if (inputedValue.trim() !== "") {
     if (emailValidator(inputedValue) === true) {
-      userEmail.classList.remove("error");
-      userEmail.classList.add("without-error");
-      errorMessage.classList.add("hide");
+      removeClass(userEmail, "error");
+      addClassName(userEmail, "without-error");
+      addClassName(errorMessage, "hide");
       isCorrectEmail = true;
-
       subscribeBtn.disabled = false;
     } else if (emailValidator(inputedValue) === false) {
-      userEmail.classList.add("error");
-      userEmail.classList.remove("without-error");
-      errorMessage.classList.remove("hide");
+      addClassName(userEmail, "error");
+      removeClass(userEmail, "without-error");
+      removeClass(errorMessage, "hide");
       errorMessage.textContent = "Valid email required";
     }
   } else if (inputedValue.trim() === "") {
     errorMessage.textContent = "Please enter your email";
     userEmail.classList.add("error");
-    userEmail.classList.remove("without-error");
-    errorMessage.classList.remove("hide");
+    addClassName(userEmail, "error");
+    removeClass(userEmail, "without-error");
+    removeClass(errorMessage, "hide");
   }
 }
 
@@ -42,14 +55,38 @@ form.addEventListener("submit", (event) => {
   if (isCorrectEmail) {
     console.log("success");
     userEmail.value = "";
-    imgSection.classList.add("hide");
-    infoSection.classList.add("hide");
-    successSection.classList.remove("hide");
+    addClassName(imgSection, "hide");
+    addClassName(infoSection, "hide");
+    removeClass(successSection, "hide");
   } else {
     console.log("error");
+    return;
   }
 });
-userEmail.addEventListener("blur", (event) => {
-  let inputedEmail = String(event.target.value);
-  checkEmailInputField(inputedEmail);
+
+userEmail.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    checkEmailInputField(userEmail.value);
+    if (isCorrectEmail) {
+      console.log("success");
+      userEmail.value = "";
+
+      addClassName(imgSection, "hide");
+      addClassName(infoSection, "hide");
+      removeClass(successSection, "hide");
+    } else {
+      console.log("error");
+      return;
+    }
+  }
+});
+dismissMessageBtn.addEventListener("click", () => {
+  removeClass(imgSection, "hide");
+  removeClass(infoSection, "hide");
+  addClassName(successSection, "hide");
+
+  removeClass(userEmail, "without-error");
+  removeClass(userEmail, "error");
+  addClassName(errorMessage, "hide");
 });
