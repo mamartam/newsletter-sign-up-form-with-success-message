@@ -6,12 +6,14 @@
   --grey: hsl(0, 0%, 58%);
   --white: hsl(0, 0%, 100%);
 }
+
 /* FONTS FAMILY */
 @font-face {
   /* Weights: 400, 700 */
   font-family: "Roboto";
   src: url("../assets/fonts/Roboto/Roboto-VariableFont_wdth,wght.ttf");
 }
+
 /* RESET */
 * {
   box-sizing: border-box;
@@ -34,10 +36,12 @@ main {
   gap: 1em;
   background-color: var(--white);
 }
+/* IMAGE SECTION */
 .img-section {
   display: flex;
   justify-content: center;
 }
+/* INFO SECTION */
 .info-section {
   padding: 1em 1.5em;
 }
@@ -69,7 +73,7 @@ main {
   background-image: url("../assets/images/icon-list.svg");
   background-repeat: no-repeat;
 }
-
+/* FORM */
 form {
   display: flex;
   flex-direction: column;
@@ -86,13 +90,6 @@ form label {
   font-weight: 700;
   display: block;
 }
-.error-message {
-  display: block;
-  color: var(--red);
-  margin-bottom: 0.5em;
-  font-size: 0.75em;
-  font-weight: 700;
-}
 form input[type="email"] {
   padding: 1em 1.5em;
   border-radius: 0.5em;
@@ -107,16 +104,6 @@ form input[type="email"]:focus {
 form input[type="email"]::placeholder {
   color: var(--grey);
 }
-
-.error {
-  border: 1px solid var(--red);
-  background-color: rgba(230, 80, 80, 0.2);
-}
-.without-error {
-  border: 1px solid green;
-  background-color: rgba(80, 230, 105, 0.2);
-}
-
 .btn {
   background-color: var(--dark-blue);
   padding: 1em;
@@ -130,7 +117,24 @@ form input[type="email"]::placeholder {
   background-color: var(--red);
   cursor: pointer;
 }
+/* ERROR MESSAGES AND STATES */
+.error-message {
+  display: block;
+  color: var(--red);
+  margin-bottom: 0.5em;
+  font-size: 0.75em;
+  font-weight: 700;
+}
+.error {
+  border: 1px solid var(--red);
+  background-color: rgba(230, 80, 80, 0.2);
+}
+.without-error {
+  border: 1px solid green;
+  background-color: rgba(80, 230, 105, 0.2);
+}
 
+/* SUCCESS SECTION */
 .success-section {
   display: flex;
   flex-direction: column;
@@ -157,7 +161,6 @@ form input[type="email"]::placeholder {
   justify-self: end;
   width: 100%;
 }
-
 .subscribe-btn:disabled {
   background-color: grey;
 }
@@ -187,6 +190,7 @@ form input[type="email"]::placeholder {
     height: fit-content;
   }
 }
+
 /* DESKTOP */
 @media screen and (min-width: 1200px) {
   body {
@@ -216,7 +220,7 @@ form input[type="email"]::placeholder {
     justify-content: center;
   }
 }
-
+/* CLASS FOR HIDING ELEMENTS */
 .hide {
   display: none;
 }
