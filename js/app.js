@@ -23,7 +23,7 @@ function removeClass(element, className) {
 function addClassName(element, className) {
   element.classList.add(className);
 }
-userEmail.addEventListener("blur", (event) => {
+userEmail.addEventListener("input", (event) => {
   let inputedEmail = String(event.target.value);
   checkEmailInputField(inputedEmail);
 });
@@ -67,23 +67,6 @@ form.addEventListener("submit", (event) => {
   } else {
     console.log("error");
     return;
-  }
-});
-userEmail.addEventListener("keydown", (event) => {
-  if (event.key === "Enter") {
-    event.preventDefault();
-    checkEmailInputField(userEmail.value);
-    if (isCorrectEmail) {
-      console.log("success");
-      userEmail.value = "";
-      addClassName(imgSection, "hide");
-      addClassName(infoSection, "hide");
-      removeClass(successSection, "hide");
-      successAccent.textContent = usersEmail;
-    } else {
-      console.log("error");
-      return;
-    }
   }
 });
 dismissMessageBtn.addEventListener("click", () => {
