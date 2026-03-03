@@ -2,6 +2,11 @@ const userEmail = document.getElementById("user-email");
 const errorMessage = document.querySelector(".error-message");
 const form = document.querySelector(".form");
 const subscribeBtn = document.querySelector(".subscribe-btn");
+
+const imgSection = document.querySelector(".img-section");
+const infoSection = document.querySelector(".info-section");
+const successSection = document.querySelector(".success-section");
+
 let isCorrectEmail = false;
 
 function emailValidator(str) {
@@ -15,6 +20,7 @@ function checkEmailInputField(inputedValue) {
       userEmail.classList.add("without-error");
       errorMessage.classList.add("hide");
       isCorrectEmail = true;
+
       subscribeBtn.disabled = false;
     } else if (emailValidator(inputedValue) === false) {
       userEmail.classList.add("error");
@@ -36,6 +42,9 @@ form.addEventListener("submit", (event) => {
   if (isCorrectEmail) {
     console.log("success");
     userEmail.value = "";
+    imgSection.classList.add("hide");
+    infoSection.classList.add("hide");
+    successSection.classList.remove("hide");
   } else {
     console.log("error");
   }
