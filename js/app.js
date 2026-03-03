@@ -7,8 +7,10 @@ const imgSection = document.querySelector(".img-section");
 const infoSection = document.querySelector(".info-section");
 const successSection = document.querySelector(".success-section");
 const dismissMessageBtn = document.querySelector(".dismiss-message-btn");
+const successAccent = document.querySelector(".success-accent");
 
 let isCorrectEmail = false;
+let usersEmail = null;
 
 // FUNCTIONS SECTION START------
 function emailValidator(str) {
@@ -32,19 +34,23 @@ function checkEmailInputField(inputedValue) {
       addClassName(userEmail, "without-error");
       addClassName(errorMessage, "hide");
       isCorrectEmail = true;
+      usersEmail = inputedValue.trim();
       subscribeBtn.disabled = false;
     } else if (emailValidator(inputedValue) === false) {
       addClassName(userEmail, "error");
       removeClass(userEmail, "without-error");
       removeClass(errorMessage, "hide");
       errorMessage.textContent = "Valid email required";
+      isCorrectEmail = false;
+      usersEmail = null;
     }
   } else if (inputedValue.trim() === "") {
     errorMessage.textContent = "Please enter your email";
-    userEmail.classList.add("error");
     addClassName(userEmail, "error");
     removeClass(userEmail, "without-error");
     removeClass(errorMessage, "hide");
+    isCorrectEmail = false;
+    usersEmail = null;
   }
 }
 // FUNCTIONS SECTION END------
@@ -57,6 +63,7 @@ form.addEventListener("submit", (event) => {
     addClassName(imgSection, "hide");
     addClassName(infoSection, "hide");
     removeClass(successSection, "hide");
+    successAccent.textContent = usersEmail;
   } else {
     console.log("error");
     return;
@@ -69,10 +76,10 @@ userEmail.addEventListener("keydown", (event) => {
     if (isCorrectEmail) {
       console.log("success");
       userEmail.value = "";
-
       addClassName(imgSection, "hide");
       addClassName(infoSection, "hide");
       removeClass(successSection, "hide");
+      successAccent.textContent = usersEmail;
     } else {
       console.log("error");
       return;
@@ -87,4 +94,6 @@ dismissMessageBtn.addEventListener("click", () => {
   removeClass(userEmail, "without-error");
   removeClass(userEmail, "error");
   addClassName(errorMessage, "hide");
+
+  subscribeBtn.disabled = true;
 });

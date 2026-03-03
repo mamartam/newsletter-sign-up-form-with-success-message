@@ -41,12 +41,13 @@
         <form action="#" method="post" class="form">
           <div class="label-and-error-message">
             <label for="user-email">Email address</label>
-            <p class="error-message hide"></p>
+            <p class="error-message hide" aria-live="polite" id="error-id"></p>
           </div>
           <input
             type="email"
             name="user-email"
             id="user-email"
+            aria-describedby="error-id"
             placeholder="email@company.com"
           />
           <button type="submit" class="subscribe-btn btn" disabled>
