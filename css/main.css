@@ -116,17 +116,19 @@ form input[type="email"]::placeholder {
   border: 1px solid green;
   background-color: rgba(80, 230, 105, 0.2);
 }
-.subscribe-btn:hover {
-  background: linear-gradient(to right, var(--red), var(--red), orange);
-  border-color: transparent;
-  cursor: pointer;
-}
+
 .btn {
   background-color: var(--dark-blue);
   padding: 1em;
   border-radius: 0.5em;
   color: var(--white);
   font-family: 700;
+  transition: background-color 0.3s linear;
+  border: none;
+}
+.btn:hover {
+  background-color: var(--red);
+  cursor: pointer;
 }
 
 .success-section {
@@ -155,11 +157,12 @@ form input[type="email"]::placeholder {
   justify-self: end;
   width: 100%;
 }
+
 .subscribe-btn:disabled {
   background-color: grey;
 }
 .subscribe-btn:disabled:hover {
-  background: gray;
+  background-color: gray;
   cursor: not-allowed;
 }
 
