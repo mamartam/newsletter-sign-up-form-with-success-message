@@ -170,7 +170,7 @@ form input[type="email"]::placeholder {
     justify-content: center;
     align-items: center;
     font-size: 16px;
-    background-color: var(--dark-blue);
+    background-color: var(--lighter-blue);
   }
   main {
     max-width: 600px;
