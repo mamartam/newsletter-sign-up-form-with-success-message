@@ -168,6 +168,10 @@ form input[type="email"]::placeholder {
   background-color: gray;
   cursor: not-allowed;
 }
+button:focus-visible {
+  outline: 1px solid var(--dark-blue);
+  outline-offset: 2px;
+}
 
 /* TABLET */
 @media screen and (min-width: 550px) {
