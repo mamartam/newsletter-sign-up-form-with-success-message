@@ -1,4 +1,4 @@
-// Connectin with DOM
+//CONNECTION WITH DOM
 const userEmail = document.getElementById("user-email");
 const errorMessage = document.querySelector(".error-message");
 const form = document.querySelector(".form");
@@ -10,11 +10,11 @@ const dismissMessageBtn = document.querySelector(".dismiss-message-btn");
 
 let isCorrectEmail = false;
 
+// FUNCTIONS SECTION START------
 function emailValidator(str) {
   const regexForEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   return regexForEmail.test(str);
 }
-
 function removeClass(element, className) {
   element.classList.remove(className);
 }
@@ -25,7 +25,6 @@ userEmail.addEventListener("blur", (event) => {
   let inputedEmail = String(event.target.value);
   checkEmailInputField(inputedEmail);
 });
-
 function checkEmailInputField(inputedValue) {
   if (inputedValue.trim() !== "") {
     if (emailValidator(inputedValue) === true) {
@@ -48,7 +47,7 @@ function checkEmailInputField(inputedValue) {
     removeClass(errorMessage, "hide");
   }
 }
-
+// FUNCTIONS SECTION END------
 form.addEventListener("submit", (event) => {
   event.preventDefault();
   checkEmailInputField(userEmail.value);
@@ -63,7 +62,6 @@ form.addEventListener("submit", (event) => {
     return;
   }
 });
-
 userEmail.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
