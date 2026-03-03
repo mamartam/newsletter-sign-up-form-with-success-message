@@ -109,7 +109,7 @@ form input[type="email"]::placeholder {
   padding: 1em;
   border-radius: 0.5em;
   color: var(--white);
-  font-family: 700;
+  font-weight: 700;
   transition: background-color 0.3s linear;
   border: none;
 }
