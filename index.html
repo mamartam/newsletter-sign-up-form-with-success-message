@@ -36,10 +36,10 @@
           <li>Measuring to ensure updates are a success</li>
           <li>And much more!</li>
         </ul>
-        <form action="#" method="post">
+        <form action="#" method="post" class="form">
           <div class="label-and-error-message">
             <label for="user-email">Email address</label>
-            <p class="error-message">Valid email required</p>
+            <p class="error-message hide"></p>
           </div>
           <input
             type="email"
@@ -47,7 +47,7 @@
             id="user-email"
             placeholder="email@company.com"
           />
-          <button type="submit" class="subscribe-btn btn">
+          <button type="submit" class="subscribe-btn btn" disabled>
             Subscribe to monthly newsletter
           </button>
         </form>
