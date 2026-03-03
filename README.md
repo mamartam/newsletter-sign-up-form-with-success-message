@@ -50,4 +50,4 @@ While the current solution is fully functional, I have identified several areas 
 
 ## 🍿 Video
 
-...
+[...](https://github.com/user-attachments/assets/11f084ac-6719-4f3c-95cc-702455b7c5c6)
