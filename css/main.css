@@ -107,21 +107,33 @@ form input[type="email"]:focus {
 form input[type="email"]::placeholder {
   color: var(--grey);
 }
-form input[type="email"]:user-invalid {
+/* form input[type="email"]:user-invalid {
+  border: 1px solid var(--red);
+  background-color: rgba(230, 80, 80, 0.2);
+} */
+
+.error {
   border: 1px solid var(--red);
   background-color: rgba(230, 80, 80, 0.2);
 }
-form input[type="email"]:user-invalid {
+.without-error {
+  border: 1px solid green;
+  background-color: rgba(80, 230, 105, 0.2);
+}
+/* form input[type="email"]:user-invalid {
   color: var(--red);
 }
 form input[type="email"]:user-valid {
   border: 1px solid green;
-}
+} */
 .subscribe-btn:hover {
   background: linear-gradient(to right, var(--red), var(--red), orange);
   border-color: transparent;
   cursor: pointer;
 }
+/* form input[type="email"]:user-invalid::placeholder {
+  color: var(--red);
+} */
 .btn {
   background-color: var(--dark-blue);
   padding: 1em;
@@ -129,6 +141,7 @@ form input[type="email"]:user-valid {
   color: var(--white);
   font-family: 700;
 }
+
 .success-section {
 }
 .hide {
@@ -140,6 +153,13 @@ form input[type="email"]:user-valid {
 .success-accent {
 }
 .dismiss-message-btn {
+}
+.subscribe-btn:disabled {
+  background-color: grey;
+}
+.subscribe-btn:disabled:hover {
+  background: gray;
+  cursor: not-allowed;
 }
 .hide {
   display: none;
